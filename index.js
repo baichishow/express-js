@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
 const { init: initDB, Counter } = require("./db");
+const request = require('request')
 
 const logger = morgan("tiny");
 
@@ -45,11 +46,11 @@ app.get("/api/count", async (req, res) => {
 // 测试
 app.get("/api/test", async (req, res) => {
   // const result = await Counter.count();
-  // res.send({
-  //   code: 0,
-  //   data: result,
-  // });
-  res.send("hehehehe");
+  res.send({
+    code: 200,
+    data: "success",
+  });
+  // res.send("hehehehe");
 });
 
 // 小程序调用，获取微信 Open ID
@@ -60,6 +61,10 @@ app.get("/api/wx_openid", async (req, res) => {
 });
 
 const port = process.env.PORT || 80;
+
+// async function menuCreate() {
+//   request()
+// }
 
 async function bootstrap() {
   await initDB();
