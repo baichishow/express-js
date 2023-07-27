@@ -46,7 +46,7 @@ app.get("/api/count", async (req, res) => {
 // 测试
 app.get("/api/test", async (req, res) => {
   // const result = await Counter.count();
-  res.send('success')
+  res.sendStatus(200);
   // res.send("hehehehe");
 });
 
