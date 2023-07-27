@@ -46,10 +46,7 @@ app.get("/api/count", async (req, res) => {
 // 测试
 app.get("/api/test", async (req, res) => {
   // const result = await Counter.count();
-  res.send({
-    code: 200,
-    data: "success",
-  });
+  res.send('success')
   // res.send("hehehehe");
 });
 
