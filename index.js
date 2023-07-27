@@ -44,10 +44,12 @@ app.get("/api/count", async (req, res) => {
 });
 
 // 测试
-app.get("/api/test", async (req, res) => {
+app.post("/api/test", async (req, res) => {
   // const result = await Counter.count();
-  res.sendStatus(200);
-  // res.send("hehehehe");
+  res.send({
+    code: 0,
+    data: req.body,
+  });
 });
 
 // 小程序调用，获取微信 Open ID
